@@ -3,6 +3,7 @@
 
 ## 今の所管理しているファイル
 
+- .bin/insta..sh
 - .bashrc
 - .vimrc
 
