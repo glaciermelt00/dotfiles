@@ -36,15 +36,11 @@ call plug#begin()
   Plug 'vim-airline/vim-airline-themes'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
-  Plug 'derekwyatt/vim-scala'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'tpope/vim-fugitive'
-  Plug 'romgrk/doom-one.vim'
   Plug 'Yggdroot/indentLine'
+  Plug 'jacoborus/tender.vim'
 call plug#end()
 
-" Configuration for vim-scala
-au BufRead,BufNewFile *.sbt set filetype=scala
 
 syntax on
 
@@ -53,7 +49,7 @@ syntax on
 " colorscheme night-owl
 " colorscheme onedark
 " colorscheme darcula
-colorscheme doom-one
+colorscheme tender
 
 " ========== Nerdtree Configuration
 " https://stackoverflow.com/questions/4226905/vim-nerdtree-not-recovered-in-session-restore
@@ -114,5 +110,3 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
-call togglerb#map("<F9>")
