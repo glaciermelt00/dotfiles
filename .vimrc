@@ -23,6 +23,7 @@ set termguicolors
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 set wildignore=.git/**,node_modules/**,docker/**
+set re=0
 
 call plug#begin()
   Plug 'preservim/nerdtree'
@@ -59,17 +60,21 @@ endfunction
 function s:restoreSession()
   if (filereadable("Session.vim")) | source Session.vim | endif
 endfunction
-" Save session on quitting Vim
-autocmd VimLeave * NERDTreeClose
-autocmd VimLeave * call s:mksessionForcely()
-" Restore session on starting Vim
-autocmd VimEnter * call s:restoreSession()
-autocmd VimEnter * NERDTree
-" open nerdtree when vim opned
-" autocmd vimenter * NERDTree
-" autocmd TabNew * call timer_start(0, { -> execute('NERDTree') })
-" close nerdtree automatically when vim closed
-" autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
+
+augroup vimrc_autocmd
+  autocmd!
+  " Save session on quitting Vim
+  autocmd VimLeave * NERDTreeClose
+  autocmd VimLeave * call s:mksessionForcely()
+  " Restore session on starting Vim
+  autocmd VimEnter * call s:restoreSession()
+  autocmd VimEnter * NERDTree
+  " open nerdtree when vim opned
+  " autocmd vimenter * NERDTree
+  " autocmd TabNew * call timer_start(0, { -> execute('NERDTree') })
+  " close nerdtree automatically when vim closed
+  " autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
+augroup END
 
 " create new tab
 noremap  <Leader><C-t> :tabnew<Enter>
