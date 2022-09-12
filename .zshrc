@@ -43,8 +43,11 @@ alias la='ls -A'
 export COURSIER_TTL=1s
 
 # nvm
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+#export NVM_DIR=~/.nvm
+#source $(brew --prefix nvm)/nvm.sh
 
 # Command
 alias screen='/usr/local/Cellar/screenutf8/4.8.0/bin/screen'
@@ -62,3 +65,30 @@ export CPPFLAGS="-I/usr/local/opt/mysql@5.7/include"
 # Added by serverless binary installer
 export PATH="$HOME/.serverless/bin:$PATH"
 
+
+eval "$(pyenv init --path)"
+
+# Path
+path=(
+    /usr/local/opt/coreutils/libexec/gnubin(N-/) # coreutils
+    /usr/local/opt/ed/libexec/gnubin(N-/) # ed
+    /usr/local/opt/findutils/libexec/gnubin(N-/) # findutils
+    /usr/local/opt/gnu-sed/libexec/gnubin(N-/) # sed
+    /usr/local/opt/gnu-tar/libexec/gnubin(N-/) # tar
+    /usr/local/opt/grep/libexec/gnubin(N-/) # grep
+    ${path}
+)
+
+# Manual
+manpath=(
+    /usr/local/opt/coreutils/libexec/gnuman(N-/) # coreutils
+    /usr/local/opt/ed/libexec/gnuman(N-/) # ed
+    /usr/local/opt/findutils/libexec/gnuman(N-/) # findutils
+    /usr/local/opt/gnu-sed/libexec/gnuman(N-/) # sed
+    /usr/local/opt/gnu-tar/libexec/gnuman(N-/) # tar
+    /usr/local/opt/grep/libexec/gnuman(N-/) # grep
+    ${manpath}
+)
+
+# pipx path
+export PATH="$PATH:/Users/haradajou/.local/bin"
