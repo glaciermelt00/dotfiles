@@ -109,9 +109,9 @@ autoload -Uz colors && colors
 
 git_prompt() {
   if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = true ]; then
-    PROMPT='%F{083}%n%f %F{038}($(arch))%f:%F{226}%B%~%f$(git_super_status)\$ '
+    PROMPT='%F{083}%n%f %F{038}($(arch))%f:%F{014}%B%~%f $(git_super_status)\$ '
   else
-    PROMPT='%F{083}%n%f %F{038}($(arch))%f:%F{226}%B%~%f '
+    PROMPT='%F{083}%n%f %F{038}($(arch))%f:%F{014}%B%~%f '
   fi
 }
 
