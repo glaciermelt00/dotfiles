@@ -12,11 +12,11 @@ export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:${PATH}
 # Terminal
 #export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
 # git-promptの読み込み
-source ~/.zsh/git-prompt.sh
+#source ~/.zsh/git-prompt.sh
 # git-completionの読み込み
-fpath=(~/.zsh $fpath)
-zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
-autoload -Uz compinit && compinit
+#fpath=(~/.zsh $fpath)
+#zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+#autoload -Uz compinit && compinit
 # プロンプトのオプション表示設定
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
@@ -93,10 +93,26 @@ manpath=(
 # pipx path
 export PATH="$PATH:/Users/haradajou/.local/bin"
 
+#----------------------------------------------------------------------------
 # for zsh-completions and autosuggestions
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  source $(brew --prefix)/opt/zsh-git-prompt/zshrc.sh
   source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
   autoload -Uz compinit
   compinit
 fi
+
+autoload -Uz colors && colors
+
+git_prompt() {
+  if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = true ]; then
+    PROMPT='%F{083}%n%f %F{038}($(arch))%f:%F{069}%~%f$(git_super_status)\$ '
+  else
+    PROMPT='%F{083}%n%f %F{038}($(arch))%f:%F{069}%~%f '
+  fi
+}
+
+precmd() {
+  git_prompt
+}
