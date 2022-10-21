@@ -5,6 +5,7 @@ set fileencoding=utf-8
 set fileformats=unix,dos,mac
 set number
 set cursorline
+set cursorcolumn            "現在の行を強調表示（縦）
 set tabstop=2
 set autoindent
 set smartindent
@@ -115,3 +116,15 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+
+"-------------------------------------------------------------------------------
+" シンタックスハイライトの有効化・80文字でラインを赤で可視化
+syntax enable
+set textwidth=0
+if exists('&colorcolumn')
+  set colorcolumn=+1
+  " プログラミング言語のfiletypeに合わせる
+  autocmd FileType sh,vim,sql,scala,html,css,scss,js,ts,vue setlocal textwidth=80
+endif
+
