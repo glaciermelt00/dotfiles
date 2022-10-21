@@ -12,11 +12,11 @@ export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:${PATH}
 # Terminal
 #export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
 # git-promptの読み込み
-#source ~/.zsh/git-prompt.sh
+source ~/.zsh/git-prompt.sh
 # git-completionの読み込み
 #fpath=(~/.zsh $fpath)
 #zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
-#autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit
 # プロンプトのオプション表示設定
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
