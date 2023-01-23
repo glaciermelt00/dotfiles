@@ -9,6 +9,8 @@ export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:${PATH}
 #export PATH="/usr/local/opt/openssl@1.0/bin:$PATH"
 #export PATH="/usr/local/opt/libpq/bin:$PATH"
 
+# git
+export PATH=/usr/local/Cellar/git/2.39.1/bin:$PATH
 # Terminal
 #export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
 # git-promptの読み込み
