@@ -4,6 +4,9 @@
 #export LANG=en_US.UTF-8
 #export CLOUDSDK_PYTHON=python2
 
+# for node v18
+export NODE_OPTIONS=--openssl-legacy-provider
+
 # PATH
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:${PATH}
 #export PATH="/usr/local/opt/openssl@1.0/bin:$PATH"
