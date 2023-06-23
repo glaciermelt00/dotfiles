@@ -125,6 +125,6 @@ set textwidth=0
 if exists('&colorcolumn')
   set colorcolumn=+1
   " プログラミング言語のfiletypeに合わせる
-  autocmd FileType sh,vim,sql,scala,html,css,scss,js,ts,vue setlocal textwidth=80
+  autocmd FileType sh,vim,sql,scala,html,css,scss,js,ts,vue setlocal textwidth=100
 endif
 
