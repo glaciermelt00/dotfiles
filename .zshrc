@@ -1,4 +1,3 @@
-
 # ------------- Copy Kinugasa-san's settings
 # Local
 #export LANG=en_US.UTF-8
@@ -50,6 +49,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 #export NVM_DIR=~/.nvm
 #source $(brew --prefix nvm)/nvm.sh
+
+# Use node lts/hydrogen as default
+nvm alias default lts/hydrogen
+nvm use default > /dev/null 2>&1
 
 # for node v18
 export NODE_OPTIONS=--openssl-legacy-provider
@@ -140,3 +143,6 @@ precmd() {
 
 # Go
 export PATH=/usr/local/go/bin:$PATH
+
+# Move to specified directory
+cd /Volumes/dev/git-dev
