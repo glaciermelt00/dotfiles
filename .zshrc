@@ -4,9 +4,6 @@
 #export LANG=en_US.UTF-8
 #export CLOUDSDK_PYTHON=python2
 
-# for node v18
-export NODE_OPTIONS=--openssl-legacy-provider
-
 # PATH
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:${PATH}
 #export PATH="/usr/local/opt/openssl@1.0/bin:$PATH"
@@ -17,7 +14,7 @@ export PATH=/usr/local/Cellar/git/2.39.1/bin:$PATH
 # Terminal
 #export PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
 # git-promptの読み込み
-source ~/.zsh/git-prompt.sh
+#source ~/.zsh/git-prompt.sh
 # git-completionの読み込み
 #fpath=(~/.zsh $fpath)
 #zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
@@ -53,6 +50,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 #export NVM_DIR=~/.nvm
 #source $(brew --prefix nvm)/nvm.sh
+
+# for node v18
+export NODE_OPTIONS=--openssl-legacy-provider
 
 # Command
 alias screen='/usr/local/Cellar/screenutf8/4.8.0/bin/screen'
@@ -98,6 +98,19 @@ manpath=(
 # pipx path
 export PATH="$PATH:/Users/haradajou/.local/bin"
 
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
+fi
+
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
 #----------------------------------------------------------------------------
 # for zsh-completions and autosuggestions
 if type brew &>/dev/null; then
@@ -123,19 +136,7 @@ git_prompt() {
 precmd() {
   git_prompt
 }
-
-### Added by Zinit's installer
-if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
-    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
-    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
-        print -P "%F{33} %F{34}Installation successful.%f%b" || \
-        print -P "%F{160} The clone has failed.%f%b"
-fi
-
-source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
+#----------------------------------------------------------------------------
 
 # Go
 export PATH=/usr/local/go/bin:$PATH
