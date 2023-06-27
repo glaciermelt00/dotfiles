@@ -1,8 +1,8 @@
 set mouse=
-"set encoding=utf-8
-"set fileencodings=utf-8
-"set fileencoding=utf-8
-"set fileformats=unix,dos,mac
+set encoding=utf-8
+set fileencodings=utf-8
+set fileencoding=utf-8
+set fileformats=unix,dos,mac
 set number
 set cursorline
 set cursorcolumn            "現在の行を強調表示（縦）
