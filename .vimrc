@@ -128,3 +128,7 @@ if exists('&colorcolumn')
   autocmd FileType sh,vim,sql,scala,html,css,scss,js,ts,vue setlocal textwidth=100
 endif
 
+"-------------------------------------------------------------------------------
+".md ファイルで、Go 言語のシンタックスハイライトを有効にする
+let g:markdown_fenced_languages = ['go']
+

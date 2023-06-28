@@ -142,7 +142,8 @@ precmd() {
 #----------------------------------------------------------------------------
 
 # Go
-export PATH=/usr/local/go/bin:$PATH
+export PATH=$(go env GOPATH)/bin:$PATH
+export PATH=$HOME/go/bin:$PATH
 
 # Move to specified directory
 cd /Volumes/dev/git-dev
