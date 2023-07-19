@@ -146,3 +146,6 @@ export PATH=$HOME/go/bin:$PATH
 
 # Move to specified directory
 cd /Volumes/dev/git-dev
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
