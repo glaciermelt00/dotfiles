@@ -5,6 +5,8 @@
 
 # PATH
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:${PATH}
+# 2023/08/02 dircolors のため追加
+export  PATH=/opt/homebrew/opt/coreutils/libexec/gnubin:${PATH}
 #export PATH="/usr/local/opt/openssl@1.0/bin:$PATH"
 #export PATH="/usr/local/opt/libpq/bin:$PATH"
 
@@ -49,6 +51,10 @@ export COURSIER_TTL=1s
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+# 2023/08/02 nvm 用に追加
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 #export NVM_DIR=~/.nvm
 #source $(brew --prefix nvm)/nvm.sh
 
