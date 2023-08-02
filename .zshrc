@@ -31,7 +31,9 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Conten
 
 # enable color support of ls and also add handy aliases
 test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-alias ls='ls --g --color=auto'
+# エラーが出るため、コメントアウト
+# alias ls='ls --g --color=auto'
+alias ls='ls -G'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
