@@ -35,7 +35,7 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Conten
 test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 # エラーが出るため、コメントアウト
 # alias ls='ls --g --color=auto'
-alias ls='ls -G'
+alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -157,3 +157,5 @@ cd /Volumes/dev/git-dev
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
