@@ -160,3 +160,8 @@ cd /Volumes/dev/git-dev
 export PATH="$PATH:$HOME/.rvm/bin"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+## ecsログイン
+alias ecsd='aws ecs execute-command --cluster platform-db-manager-development --container rails --interactive --command "/bin/sh" --task'
+alias ecss='aws ecs execute-command --cluster platform-db-manager-staging --container rails --interactive --command "/bin/sh" --task'
+alias ecsp='aws ecs execute-command --cluster platform-db-manager-production --container rails --interactive --command "/bin/sh" --task'
