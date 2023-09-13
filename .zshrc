@@ -166,6 +166,3 @@ alias ecsd='aws ecs execute-command --cluster platform-db-manager-development --
 alias ecss='aws ecs execute-command --cluster platform-db-manager-staging --container rails --interactive --command "/bin/sh" --task'
 alias ecsp='aws ecs execute-command --cluster platform-db-manager-production --container rails --interactive --command "/bin/sh" --task'
 
-## パッケージインストール用の設定
-export NPM_TOKEN=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
-
