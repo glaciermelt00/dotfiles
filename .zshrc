@@ -150,7 +150,7 @@ precmd() {
 #----------------------------------------------------------------------------
 
 # Go
-export GOPATH=$HOME/go
+export GOPATH=/usr/local/go
 export PATH=$PATH:$GOPATH/bin
 
 # Move to specified directory
@@ -165,3 +165,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 alias ecsd='aws ecs execute-command --cluster platform-db-manager-development --container rails --interactive --command "/bin/sh" --task'
 alias ecss='aws ecs execute-command --cluster platform-db-manager-staging --container rails --interactive --command "/bin/sh" --task'
 alias ecsp='aws ecs execute-command --cluster platform-db-manager-production --container rails --interactive --command "/bin/sh" --task'
+
+## パッケージインストール用の設定
+export NPM_TOKEN=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
+
