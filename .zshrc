@@ -63,7 +63,7 @@ nvm alias default lts/hydrogen
 nvm use default > /dev/null 2>&1
 
 # for node v18
-export NODE_OPTIONS=--openssl-legacy-provider
+#export NODE_OPTIONS=--openssl-legacy-provider
 
 # Command
 alias screen='/usr/local/Cellar/screenutf8/4.8.0/bin/screen'
