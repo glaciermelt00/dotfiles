@@ -166,3 +166,5 @@ alias ecsd='aws ecs execute-command --cluster platform-db-manager-development --
 alias ecss='aws ecs execute-command --cluster platform-db-manager-staging --container rails --interactive --command "/bin/sh" --task'
 alias ecsp='aws ecs execute-command --cluster platform-db-manager-production --container rails --interactive --command "/bin/sh" --task'
 
+## VSCode を開く
+alias c='code .'
