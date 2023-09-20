@@ -169,3 +169,8 @@ alias ecsp='aws ecs execute-command --cluster platform-db-manager-production --c
 
 ## VSCode を開く
 alias c='code .'
+
+alias roov-dev-db="nohup aws ssm start-session \
+    --target i-00f077e1fb7839376 \
+    --document-name AWS-StartPortForwardingSessionToRemoteHost \
+    --parameters '{\"host\":[\"roov-dev.cluster-cy9xnhnpdoan.ap-northeast-1.rds.amazonaws.com\"],\"portNumber\":[\"5432\"], \"localPortNumber\":[\"5432\"]}'  &"
