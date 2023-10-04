@@ -29,7 +29,9 @@ GIT_PS1_SHOWUPSTREAM=auto
 setopt PROMPT_SUBST ; PS1='%F{green}%n@%f: %F{cyan}%B%~%b%f %F{yellow}%B$(__git_ps1 " (%s)")%b%f
 \$ '
 
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home/"
+# JAVA のパス
+#export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home/"
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
 
 # enable color support of ls and also add handy aliases
 test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -174,3 +176,7 @@ alias roov-dev-db="nohup aws ssm start-session \
     --target i-00f077e1fb7839376 \
     --document-name AWS-StartPortForwardingSessionToRemoteHost \
     --parameters '{\"host\":[\"roov-dev.cluster-cy9xnhnpdoan.ap-northeast-1.rds.amazonaws.com\"],\"portNumber\":[\"5432\"], \"localPortNumber\":[\"5432\"]}'  &"
+
+## rbenv のパスを通す
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
