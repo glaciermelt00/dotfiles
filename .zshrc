@@ -180,3 +180,6 @@ alias roov-dev-db="nohup aws ssm start-session \
 ## rbenv のパスを通す
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/shims:$PATH"
+
+## Terraform の alias
+alias tf='terraform'
