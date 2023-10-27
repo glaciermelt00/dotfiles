@@ -153,7 +153,7 @@ precmd() {
 #----------------------------------------------------------------------------
 
 # Go
-export GOPATH=/usr/local/go
+export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 # Move to specified directory
@@ -175,7 +175,7 @@ alias c='code .'
 alias roov-dev-db="nohup aws ssm start-session \
     --target i-00f077e1fb7839376 \
     --document-name AWS-StartPortForwardingSessionToRemoteHost \
-    --parameters '{\"host\":[\"roov-dev.cluster-cy9xnhnpdoan.ap-northeast-1.rds.amazonaws.com\"],\"portNumber\":[\"5432\"], \"localPortNumber\":[\"5432\"]}'  &"
+    --parameters '{\"host\":[\"roov-dev.cluster-cy9xnhnpdoan.ap-northeast-1.rds.amazonaws.com\"],\"portNumber\":[\"5432\"], \"localPortNumber\":[\"5433\"]}'  &"
 
 ## rbenv のパスを通す
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -183,3 +183,6 @@ export PATH="$HOME/.rbenv/shims:$PATH"
 
 ## Terraform の alias
 alias tf='terraform'
+
+## Rails
+export PATH="/usr/bin/rails:$PATH"
