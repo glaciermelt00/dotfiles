@@ -72,6 +72,9 @@ export PATH=/usr/local/opt/mysql@5.7/bin:$PATH
 export LDFLAGS="-L/usr/local/opt/mysql@5.7/lib"
 export CPPFLAGS="-I/usr/local/opt/mysql@5.7/include"
 
+# MySQL client
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
 # tabtab source for packages
 # uninstall by removing these lines
 [ -f ~/.config/tabtab/__tabtab.bash ] && . ~/.config/tabtab/__tabtab.bash || true
@@ -186,3 +189,12 @@ alias tf='terraform'
 
 ## Rails
 export PATH="/usr/bin/rails:$PATH"
+
+## libpq
+export PATH="/usr/local/opt/libpq/bin:$PATH"
+
+## OpenVPN
+export PATH="/usr/local/opt/openvpn/sbin:$PATH"
+
+## msfvenom
+export PATH="/usr/local/bin/msfvenom:$PATH"
