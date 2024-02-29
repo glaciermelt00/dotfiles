@@ -198,3 +198,9 @@ export PATH="/usr/local/opt/openvpn/sbin:$PATH"
 
 ## msfvenom
 export PATH="/usr/local/bin/msfvenom:$PATH"
+
+## auto-commit
+export PATH="$PATH:/Users/j.harada/.bin"
+export OPENAI_API_KEY='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'
+
+export PATH="$PATH:/Users/j.harada/.bin"
