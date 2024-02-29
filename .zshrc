@@ -201,6 +201,6 @@ export PATH="/usr/local/bin/msfvenom:$PATH"
 
 ## auto-commit
 export PATH="$PATH:/Users/j.harada/.bin"
-export OPENAI_API_KEY='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'
+export OPENAI_API_KEY='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'
 
 export PATH="$PATH:/Users/j.harada/.bin"
