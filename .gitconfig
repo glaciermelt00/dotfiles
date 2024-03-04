@@ -16,6 +16,7 @@ ci = commit
 st = status
 ll    = log --graph --all
 ls    = log --graph --all --date=short --pretty=format:'%Cgreen%h %cd %Cred%cn %Creset%s %Cred%d'
-	ac = !git add -A && aicommits -a
+ac = !git add -A && aicommits -a
+s = switch
 [push]
 default = simple
