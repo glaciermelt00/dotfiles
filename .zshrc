@@ -68,12 +68,12 @@ alias screen='/usr/local/Cellar/screenutf8/4.8.0/bin/screen'
 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 
 # MySQL
-export PATH=/usr/local/opt/mysql@5.7/bin:$PATH
-export LDFLAGS="-L/usr/local/opt/mysql@5.7/lib"
-export CPPFLAGS="-I/usr/local/opt/mysql@5.7/include"
+export PATH=/opt/homebrew/opt/mysql@5.7/bin:$PATH
+export LDFLAGS="-L/opt/homebrew/opt/mysql@5.7/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/mysql@5.7/include"
 
 # MySQL client
-export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+#export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
 # tabtab source for packages
 # uninstall by removing these lines
@@ -157,12 +157,6 @@ export PATH=$PATH:$GOPATH/bin
 # Move to specified directory
 cd /Volumes/dev/git-dev
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-# https://github.com/rvm/rvm/issues/5398
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -201,3 +195,9 @@ export PATH="/usr/local/bin/msfvenom:$PATH"
 
 ## auto-commit
 export PATH="$PATH:/Users/j.harada/.bin"
+
+# Ruby
+eval "$(rbenv init - zsh)"
+
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
