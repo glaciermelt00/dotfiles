@@ -137,6 +137,9 @@ fi
 
 autoload -Uz colors && colors
 
+### macOS 12 Monterey 以降ではデフォルトパス内に python コマンドが存在しないため、エイリアスを設定
+### 参考： https://zenn.dev/sprout2000/articles/bd1fac2f3f83bc
+alias python="python3"
 git_prompt() {
   if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = true ]; then
     PROMPT='%F{083}%n%f %F{038}($(arch))%f:%F{014}%B%~%f $(git_super_status)\$ '
