@@ -3,6 +3,7 @@ name = glaciermelt00
 email = glacier-melt@hotmail.co.jp
 [core]
 editor = vi
+excludesfile = /Volumes/dev/git-dev/dotfiles/.gitignore
 [color]
 ui     = true
 branch = auto
